@@ -1,4 +1,4 @@
-@extends('home')
+@extends('home1')
 
 @section('content')
     <div class="col-12 col-md-12">

@@ -12,7 +12,7 @@ class BookController extends Controller
 {
     public function index()
     {
-        $books = Book::all();
+        $books = Book::paginate(5);
         return view('book.list', compact('books'));
     }
 
@@ -64,7 +64,7 @@ class BookController extends Controller
             $path = $image->move(public_path('upload/images', $clientName));
             $book->image = $clientName;
         }
-            $book->save();
+        $book->save();
 
         Session::flash('success', 'Cap nhat thanh cong');
         return redirect(route('book.index'));
@@ -84,5 +84,14 @@ class BookController extends Controller
         return redirect(route('book.index'));
     }
 
+    public function search(Request $request)
+    {
+        $keyword = $request->input('keyword');
+        if (!$keyword) {
+            return redirect(route('book.index'));
+        }
+        $books = Book::where('title', 'LIKE', '%' . $keyword . '%')->paginate(5);
 
+        return view('book.list', compact('books'));
+    }
 }

@@ -1,4 +1,4 @@
-@extends('home')
+@extends('home1')
 
 @section('content')
     <a class="navbar-brand">My Book</a>

@@ -1,4 +1,4 @@
-@extends('home')
+@extends('home1')
 
 @section('content')
     <div class="col-12 col-md-12" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">

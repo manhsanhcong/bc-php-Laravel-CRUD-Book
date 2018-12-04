@@ -27,7 +27,7 @@ class BookRequest extends FormRequest
             'title' => 'required|max:255',
             'descriptron' => 'required|max:255',
             'content' => 'required|max:255',
-            'image' => 'required|max:255\',            
+            'image' => 'required|min:2\',            
 '
         ];
     }
